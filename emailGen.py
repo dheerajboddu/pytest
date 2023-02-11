@@ -24,10 +24,6 @@ bod = "Hi this message is automated from docker"
 
 #context = ssl.create_default_context()
 
-f = open("email.txt")
-emails = f.readlines()
-
-for each in emails:
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smpt:
-        smpt.login(e_s,e_p)
-        smpt.sendmail(e_s,e_r,bod)
+with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smpt:
+    smpt.login(e_s,e_p)
+    smpt.sendmail(e_s,e_r,bod)
